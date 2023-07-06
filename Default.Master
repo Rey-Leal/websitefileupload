@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.Master.cs" Inherits="_Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" oncontextmenu="return false" onselectstart="return false">
+<head runat="server">
+    <title>WebSite FileUpload</title>
+    <link href="App_Icons/16.ico" rel="shortcut icon" />
+    <link href="App_Css/Estilos.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .Botao {
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="Pai">
+            <div class="Topo">
+                <object id="flash1" data="App_Swf/topo.swf" height="225" type="application/x-shockwave-flash"
+                    width="950">
+                    <param name="movie" value="App_Swf/topo.swf" />
+                    <param name="quality" value="high" />
+                    <param name="menu" value="false" />
+                    <param name="wmode" value="transparent" />
+                </object>
+            </div>
+            <div class="Clear">
+            </div>
+            <div class="Container">
+                <div class="Left">
+                    <ul class="Menu">
+                        <li><a href="Default.aspx" title="Página Inicial">Home</a> </li>
+
+                        <li>
+                            <asp:Panel ID="pnLogin" runat="server">
+                               <br /> Acesso Administrativo<br />
+                                <p>
+                                    Usuario:<br />
+                                    <asp:TextBox ID="txtUsuario" runat="server" CssClass="Form"></asp:TextBox><br />
+                                </p>
+                                <p>
+                                    Senha:
+                            <br />
+                                    <asp:TextBox ID="txtSenha" runat="server" CssClass="Form" TextMode="Password"></asp:TextBox>
+                                </p>
+                                <p>
+                                    <asp:Button ID="btLogar" runat="server" Text="Logar" CssClass="Botao" OnClick="btLogar_Click" Width="122px" />
+                                </p>
+                            </asp:Panel>
+
+                            <asp:Panel ID="pnLogado" runat="server" Visible="false">
+                                <li><a href="FileUpload.aspx" title="FileUpload">FileUpload</a> </li>
+                                <li>
+                                    <asp:LinkButton ID="lbSair" runat="server" OnClick="lbSair_Click">Sair</asp:LinkButton>
+                                </li>
+                            </asp:Panel>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="Clear">
+                </div>
+            </div>
+        </div>
+        <div class="Rodape">
+            <a href="javascript:mover_xy(3)">© MGF Informática Ltda
+            <br />
+                Todos direitos reservados </a>
+        </div>
+    </form>
+</body>
+
+</html>
